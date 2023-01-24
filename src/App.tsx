@@ -31,6 +31,7 @@ function App() {
     if (income > 0) {
       const invertal = setInterval(() => {
         setTotal(total += income);
+
       }, 1000)
       return () => clearInterval(invertal)
     }
@@ -47,28 +48,32 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <header className='p-2 bg-slate-400 rounded'>
-        <h1 className="font-bold text-2xl">Total: ${total.toFixed(2)}</h1>
-        <span>(${income.toFixed(2)})</span>
-      </header>
-      <main >
-        <div>
-          <h2>Produtos:</h2>
-        </div>
-        <div className="products">
+    <div className="App flex h-screen ">
+      <div className=' bg-slate-300 h-1/2 w-100 rounded-lg m-auto' >
+        <h1 className='text-center py-4 text-3xl font-bold'>Farming Game</h1>
+
+        <header className='p-2 bg-slate-400 rounded'>
+          <h1 className="font-bold text-2xl">Total: ${total.toFixed(2)}</h1>
+          <span>(${income.toFixed(2)}/s)</span>
+        </header>
+        <main >
           <div>
-            {products.map((item: any) => {
-              return (
-                <div key={item.name}>
-                  <h4>{item.name} - ${item.cost.toFixed(2)}</h4>
-                  <button onClick={() => buyProducts(item)}>Comprar </button>
-                </div>
-              )
-            })}
+            <h1 className='text-2xl'>Produtos:</h1>
           </div>
-        </div>
-      </main >
+          <div className="products ">
+            <div className='flex align-top justify-center'>
+              {products.map((item: any) => {
+                return (
+                  <div key={item.name} className='w-48 p-2 grid'>
+                    <h4 className='text-base font-bold'>{item.name}: ${item.cost.toFixed(2)}</h4>
+                    <button className='text-lg font-bold  hover:bg-blue-200' onClick={() => buyProducts(item)}>Comprar </button>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </main >
+      </div>
     </div >
   )
 }
