@@ -1,0 +1,61 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  width: 50%;
+
+  margin: 64px;
+  background: #d8d8d8;
+
+  border-radius: 8px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  margin: 16px;
+}
+
+header h1 {
+  margin: 0 16px;
+}
+
+main {
+  padding: 16px;
+}
+
+main div.products {
+  display: flex;
+  flex-direction: column;
+}
+
+.products h4 {
+  width: 50%;
+
+  margin: 16px;
+}
+
+button {
+  background: #f6f6f6;
+  padding: 6px 12px;
+  border-radius: 8px;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+}
+
+.notMoney {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+
+  padding: 16px 32px;
+  background: red;
+
+  transform: translate(-50%);
+}
