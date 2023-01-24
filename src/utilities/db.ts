@@ -1,5 +1,4 @@
 export
-
     const products = [{
         name: 'Maçã',
         cost: 1.00,

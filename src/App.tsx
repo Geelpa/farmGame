@@ -1,11 +1,10 @@
-import { useEffect, useState, createElement } from 'react';
-import './styles/global.css';
+import { useEffect, useState } from 'react';
 import { products } from './utilities/db';
+import './styles/global.css';
 
 function App() {
   let [income, setIncome] = useState<number>(0);
   let [total, setTotal] = useState<number>(5);
-
 
   useEffect(() => {
     if (income > 0) {
@@ -24,10 +23,8 @@ function App() {
 
       setTotal(transformMoney)
       setIncome(transformIncome)
-
       console.log('informações carregadas')
     }
-
   })
 
   useEffect(() => {
@@ -44,7 +41,6 @@ function App() {
     if (total > product.cost) {
       setIncome(prevIncome => prevIncome + product.profit);
       setTotal(prevTotal => prevTotal - product.cost)
-
     } else {
       return console.log('dinheiro insuficiente')
     }
